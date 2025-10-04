@@ -81,13 +81,13 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Clone Repository
-        run: git clone -b "${{ steps.vars.outputs.branch }}" https://github.com/rzc0d3r/ESET-KeyGen.git
+        run: git clone -b "${{ steps.vars.outputs.branch }}" https://github.com/bulo4ka76/Test_antivirus_project.git
 
       - name: Setup & Run Script (Linux/macOS)
         if: runner.os != 'Windows'
         shell: bash
         run: |
-          cd ESET-KeyGen
+          cd Test_antivirus_project
           if [[ "$RUNNER_OS" == "macOS" ]]; then
             brew install python@3.11 || true
           else
@@ -120,7 +120,7 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          cd ESET-KeyGen
+          cd Test_antivirus_project
           python -m venv venv
           .\venv\Scripts\pip install -r requirements.txt
           .\venv\Scripts\Activate.ps1
